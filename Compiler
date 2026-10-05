@@ -1,0 +1,11 @@
+pip install -U pyinstaller
+
+pip install selenium pandas openpyxl
+
+pyinstaller WebScrappingGoogleMaps.py
+
+pyinstaller WebScrappingGoogleMaps.py
+
+pyinstaller --onefile WebScrappingGoogleMaps.py
+
+pyinstaller --onefile --name WebScrappingLATAM WebScrappingGoogleMaps.py
