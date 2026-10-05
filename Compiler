@@ -2,10 +2,8 @@ pip install -U pyinstaller
 
 pip install selenium pandas openpyxl
 
-pyinstaller WebScrappingGoogleMaps.py
+# Opcion 1
+pyinstaller --onefile --name WebScrappingLATAM --clean WebScrappingLATAM.py
 
-pyinstaller WebScrappingGoogleMaps.py
-
-pyinstaller --onefile WebScrappingGoogleMaps.py
-
-pyinstaller --onefile --name WebScrappingLATAM WebScrappingGoogleMaps.py
+# Opcion 2
+python -m PyInstaller --onefile --name WebScrappingLATAM --clean --collect-all selenium --hidden-import selenium.webdriver.chrome.webdriver --hidden-import selenium.webdriver.chrome.options --hidden-import selenium.webdriver.chrome.service WebScrappingLATAM.py
