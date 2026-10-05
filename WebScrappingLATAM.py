@@ -4,10 +4,16 @@ import ctypes
 from pathlib import Path
 from tkinter import Tk, filedialog
 from selenium import webdriver
+
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import (TimeoutException,  NoSuchElementException)
 from urllib.parse import quote_plus, unquote
 import re
 import time
@@ -76,7 +82,7 @@ print(locations.head())
 # Cambiar a False para hacer pruebas si se requiere
 HEADLESS = True
 
-options = webdriver.ChromeOptions()
+options = Options()
 if HEADLESS:
     options.add_argument('--headless=new')
 
